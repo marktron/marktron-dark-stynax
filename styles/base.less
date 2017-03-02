@@ -65,7 +65,6 @@ atom-text-editor .bracket-matcher .region {
     background-color: fade(@light-orange,30%);
     z-index: 100;
 }
-
 .search-results .syntax--marker .region,
 atom-text-editor .search-results .syntax--marker .region {
     background-color: transparent;
@@ -82,46 +81,6 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
     font-style: italic;
 }
 
-.syntax--keyword {
-    color: @green; //
-    //   &.control {
-    //     color: @purple;
-    //   }
-    //
-    //   &.operator {
-    //     color: @syntax-text-color;
-    //   }
-    //
-    //   &.other.special-method {
-    //     color: @blue;
-    //   }
-    //
-    //   &.other.unit {
-    //     color: @orange;
-    //   }
-}
-// .storage {
-//   color: @purple;
-// }
-/*.constant {
-  color: @orange;
-
-  &.character.escape {
-    color: @red;
-  }
-
-  &.numeric {
-    color: @orange;
-  }
-
-  &.other.color {
-    color: @red;
-  }
-
-  &.other.symbol {
-    color: @green;
-  }
-}*/
 .syntax--variable {
     color: @cyan;
 
@@ -173,16 +132,19 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
     }
 }
 
+.syntax--punctuation.syntax--definition.syntax--tag.syntax--jsx {
+  color: @blue;
+}
 .syntax--support {
     &.syntax--class {
-        color: @light-orange;
+        color: @blue;
     }
 
     &.syntax--function {
-        color: @blue;
+        color: @light-orange;
 
         &.syntax--any-method {
-            color: @blue;
+            color: @light-orange;
         }
     }
 }
@@ -210,18 +172,29 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
         color: @blue;
     }
 
-    &.syntax--name.syntax--tag {
+    &.syntax--name.syntax--tag{
         color: @blue;
         text-decoration: none;
     }
 
     &.syntax--other.syntax--attribute-name {
-        color: @orange;
+        color: @green;
 
         &.syntax--id {
-            color: @blue;
+            color: @green;
         }
     }
+}
+.syntax--tag.syntax--begin, .syntax--tag.syntax--end, .syntax--punctuation.syntax--definition.syntax--tag.syntax--html {
+  color: @blue;
+}
+.syntax--meta.syntax--tag.syntax--inline.syntax--any,
+.syntax--punctuation.syntax--definition.syntax--string.syntax--begin,
+.syntax--punctuation.syntax--definition.syntax--string.syntax--end {
+    color: darken(@base03, 15%);
+}
+.syntax--string.syntax--quoted {
+  color: @base03;
 }
 // .meta {
 //   &.class {
